@@ -13,6 +13,7 @@ def get_years():
 
 def get_state():
     '''
+    gets all the available states of objects in website
     '''
     state_list = ["full", "part","noteq","n_finished", "foundation", "none" ] 
 
