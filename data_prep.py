@@ -47,17 +47,19 @@ def create_df(df_raw):
 	quantiles_range = pd.DataFrame(columns = column_names)
 
 	for week in sorted(log_dates):
-		Q1 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.05) 
+		Q1 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.01) 
 		Q2 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.25) 
 		Q3 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.75) 
-		Q4 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.95)
+		Q4 = df_raw['price_sq_m'][df_raw['week'] == week].quantile(.99)
 		Skewness1 = df_raw['price_sq_m'][df_raw['week'] == week].skew()
 		Mean1 = df_raw['price_sq_m'][df_raw['week'] == week].mean()
 		Median1 = df_raw['price_sq_m'][df_raw['week'] == week].median()
 		IQR = Q3 - Q2
 		df_temp = df_raw[df_raw['week'] == week]
-		df_temp = df_temp[(df_temp['price_sq_m'] > Q1 - 1.25 * IQR)]
-		df_temp = df_temp[(df_temp['price_sq_m'] < Q3 + 1.25 * IQR)]
+		#df_temp = df_temp[(df_temp['price_sq_m'] > Q1 - 1.25 * IQR)]
+		#df_temp = df_temp[(df_temp['price_sq_m'] < Q3 + 1.25 * IQR)]
+		df_temp = df_temp[(df_temp['price_sq_m'] > Q1)]
+		df_temp = df_temp[(df_temp['price_sq_m'] < Q3)]
 		df = df.append(df_temp, sort=False)
 		Skewness2 = df['price_sq_m'][df['week'] == week].skew()
 		Mean2 = df['price_sq_m'][df['week'] == week].mean()
