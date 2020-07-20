@@ -10,7 +10,7 @@ def create_df_raw():
 	4) only furnished apartments are included (state = 2)
 	'''
 	df_raw = pd.read_excel(r'C:\Users\tiesi\Class D\Vilnius-Real-Estate-market-exploration\Data.xlsx', index_col=0) 
-	df_raw = df_raw[df_raw['year']< 2019]
+	#df_raw = df_raw[df_raw['year'] > 2018]
 	df_raw = df_raw[df_raw['space_sq_m']< 120]
 	df_raw = df_raw[df_raw['type'] == 1]
 	df_raw['log_date'] = pd.to_datetime(df_raw['log_date'])
