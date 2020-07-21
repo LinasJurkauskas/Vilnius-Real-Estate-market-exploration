@@ -15,13 +15,13 @@ def create_df_raw():
 	df_raw = df_raw[df_raw['type'] == 1]
 	df_raw['log_date'] = pd.to_datetime(df_raw['log_date'])
 	df_raw['week'] = df_raw['log_date'].dt.week
-	df_raw = df_raw[df_raw['state']==2]
+	#df_raw = df_raw[df_raw['state']==2]
 
 
 
 	#select the columns for analysis
 	df_raw_columns = [ 'log_date', 'district', 'street', 'year', 'total_price',
-	       'price_sq_m', 'nr_rooms', 'space_sq_m', 'floor', 'nr_floors', 'week']
+	       'price_sq_m', 'nr_rooms', 'space_sq_m', 'floor', 'nr_floors', 'week', 'state']
 
 	df_raw = df_raw[df_raw_columns]
 
