@@ -7,7 +7,7 @@ import metadata as metadata
 
 scrapper = ARS.AruodasScrapper()
 year_list = metadata.get_years()
-#year_list = [2021]
+#year_list = [2021] 
 state_list = metadata.get_state()
 #type_list = ['butai']
 type_list = metadata.get_types()
