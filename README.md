@@ -1,4 +1,5 @@
-## Vilnius real estate used Apartment market analysis
+![](https://www.woodproperty.com.au/wp-content/uploads/2018/11/Market-update.png)
+# Vilnius real estate used Apartment market analysis
 
 * Purpose: analyse Vilnius real estate pricing changes during Covid-19 induced quarantine and post-quarantine period (est. 2020.05-2020.12)
 * Hypothesis: The uncertainty brought by Covid-19 should bring fluctuations in Vilnius real estate markets.
