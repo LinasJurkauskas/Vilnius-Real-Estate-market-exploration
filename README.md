@@ -3,8 +3,8 @@
 * Purpose: analyse Vilnius real estate pricing changes during Covid-19 induced quarantine and post-quarantine period (est. 2020.05-2020.12)
 * Hypothesis: The uncertainty brought by Covid-19 should bring fluctuations in Vilnius real estate markets.
 * Predictions:
-  * 1. Increase in supply for apartments selling due to short-term rent demand drop and potential purchases hesitation due to market changes.
-  * 2. Decrease in prices due to plummeting demand and potential increase of supply.
+  1. Increase in supply for apartments selling due to short-term rent demand drop and potential purchases hesitation due to market changes.
+  2. Decrease in prices due to plummeting demand and potential increase of supply.
 
 * Scope: data from one of main the Lithuanian real estate market portals used.
 * Data loaded weekly to monitor market changes.
