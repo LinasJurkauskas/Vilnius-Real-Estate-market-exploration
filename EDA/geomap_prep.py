@@ -8,6 +8,7 @@ def build_map_df(df):
     Loads Vilnius map and populates with latest date of apartments data on a street level.
     '''
     df = df[df['week']==df['week'].max()]
+    df = df[df['age_segment']!='New (2019+)']
     streets = df.groupby('street')['price_sq_m'].agg(['mean', 'count'])
     streets['street_rank'] = pd.qcut(streets['mean'], q=3,  labels=[1,2,3])
     streets['street_size'] = pd.qcut(streets['count'], q=3,  labels=[1,2,3])
