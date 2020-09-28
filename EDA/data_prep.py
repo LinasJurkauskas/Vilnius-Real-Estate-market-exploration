@@ -46,7 +46,30 @@ def create_obj_raw():
 	return df_raw
 
 
+def create_distinct_obj_raw():
+	'''
+	Loads the raw data, makes the exclusion of unused data for analysis.
+	1) extra large apartments > 120 sq. m excluded.
+	2) only apartments (no houses) are included (type = 1)
+	'''
+	df_raw = pd.read_excel(r'C:\Users\tiesi\Class D\Vilnius-Real-Estate-market-exploration\Data.xlsx', index_col=0, sheet_name="distinct_objects") 
+	#df_raw = df_raw[df_raw['year'] > 2018]
+	df_raw = df_raw[df_raw['space_sq_m']< 120]
+	df_raw = df_raw[df_raw['type']==1]
+	#df_raw = df_raw[df_raw['type'] != 2]
+	df_raw['first_date'] = pd.to_datetime(df_raw['first_date'])
+	df_raw['last_date'] = pd.to_datetime(df_raw['last_date'])
 
+	#df_raw['week'] = df_raw['log_date'].dt.week
+	#df_raw = df_raw[df_raw['state']==2]
+
+	#select the columns for analysis
+	#df_raw_columns = [ 'log_date', 'district', 'street', 'year', 'total_price',
+	#       'price_sq_m', 'nr_rooms', 'space_sq_m', 'floor', 'nr_floors', 'week', 'state', 'type']
+
+	#df_raw = df_raw[df_raw_columns]
+
+	return df_raw
 
 
 
